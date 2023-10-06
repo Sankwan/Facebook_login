@@ -23,7 +23,7 @@ body {
 }
 
 main {
-    height: 70vh;
+    height: 100vh;
     width: 100vw;
     position: relative;
     margin: 0 auto;
@@ -191,7 +191,22 @@ footer ol li a:hover {
 footer small {
     font-size: 11px;
 }
-    </style>
+
+.col-form .form-container .btn-login:hover {
+    cursor: pointer;
+}
+
+    </style> 
+    
+    <script>
+        function login() {
+            // Add your login logic here
+            // For example, you can redirect the user to a login page or perform some authentication process
+            // You can also use libraries like jQuery or frameworks like Angular or React for more complex interactions
+            alert("Login button clicked!"); // This is just a placeholder action
+        }
+    </script>
+
 </head>
 
 <body>
@@ -199,13 +214,13 @@ footer small {
         <div class="row">
             <div class="col-logo">
                 <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" alt="Logo">
-                <h2>Facebook helps you connect and share with the people in your life.</h2>
+                <h2>Connect with friends and the world around you on Facebook.</h2>
             </div>
             <div class="col-form">
                 <div class="form-container">
                     <input type="text" placeholder="Email or phone number">
                     <input type="password" placeholder="Password">
-                    <button class="btn-login">Login</button>
+                    <button class="btn-login" onclick="login()">Login</button>
                     <a href="#">Forgotten password?</a>
                     <button class="btn-new">Create new Account</button>
                 </div>
@@ -270,7 +285,7 @@ footer small {
                 <li><a href="#">Instagram</a></li>
                 <li><a href="#">Local</a></li>
             </ol>
-            <small>Facebook © 2022</small>
+            <small>Meta © 2022</small>
         </div>
     </footer>
 </body>
