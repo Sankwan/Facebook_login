@@ -1,0 +1,6 @@
+added php file to parse collected details to json file
+
+separated css and js file
+
+added data.json file as the page will not work without it
+
