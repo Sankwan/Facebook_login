@@ -1,3 +1,7 @@
 {
-    "liveServer.settings.port": 5501
+    // [FIX] Live Server port aligned to 5000 for consistency.
+    // NOTE: The app uses Flask (app.py), not Live Server, so this setting
+    // is mostly unused. If you do use Live Server for something else,
+    // make sure it doesn't conflict with the Flask port.
+    "liveServer.settings.port": 5000
 }
